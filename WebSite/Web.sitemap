@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="admin/Main.aspx" title="管理后台"  description="管理后台">
+
+    <siteMapNode url="admin/UserManger.aspx" title="用户管理"  description="用户管理" >
+      <siteMapNode url="admin/AddUser.aspx" title="添加用户信息"  description="添加用户信息" />
+      <siteMapNode url="admin/ModifyUser.aspx" title="修改用户信息"  description="修改用户信息" />
+      <siteMapNode url="admin/UserList.aspx" title="用户列表"  description="用户列表" />
+    </siteMapNode>
+
+    <siteMapNode url="~/admin/UserStateManger.aspx" title="用户状态管理"  description="用户状态管理" >
+      <siteMapNode url="~/admin/AddUserState.aspx" title="添加用户状态信息"  description="添加用户状态信息" />
+      <siteMapNode url="~/admin/ModifyUserState.aspx" title="修改用户状态信息"  description="修改用户状态信息" />
+      <siteMapNode url="~/admin/UserListState.aspx" title="用户状态列表"  description="用户状态列表" />
+    </siteMapNode>
+
+  </siteMapNode>
+</siteMap>

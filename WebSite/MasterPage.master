@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <table style="width: 1000px;" align="center">
+        <tr>
+            <td colspan="2" bgcolor="#FF6600" height="180px">logo</td>
+        </tr>
+        <tr >
+            <td class="auto-style1" bgcolor="#FF9900" height="450px">导航菜单</td>
+            <td align="left" valign="top">
+                <form id="form" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" bgcolor="#FF6600" height="100px">版权所有</td>
+        </tr>
+    </table>
+</body>
+</html>

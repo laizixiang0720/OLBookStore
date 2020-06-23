@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMapNode url="index.aspx" title="首页"  description="首页">
+
+  <siteMapNode url="" title="教材"  description="教材" >
+    <siteMapNode url="" title="计算机类"  description="计算机类" />
+    <siteMapNode url="" title="政治类"  description="政治类" />
+    <siteMapNode url="" title="外语类"  description="外语类" />
+  </siteMapNode>
+
+
+  <siteMapNode url="" title="手机互动"  description="手机互动" />
+  <siteMapNode url="" title="新书"  description="新书" />
+  <siteMapNode url="" title="赠书"  description="赠书" />
+  <siteMapNode url="" title="电子书"  description="电子书" />
+  <siteMapNode url="" title="排行榜"  description="排行榜" />
+  <siteMapNode url="" title="视频教程"  description="视频教程" />
+  <siteMapNode url="" title="在线阅读"  description="在线阅读" />
+  <siteMapNode url="" title="书评"  description="书评" />
+  <siteMapNode url="" title="联系我们"  description="联系我们" />
+</siteMapNode>

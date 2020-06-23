@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="OLBookstore.Web.MasterPage" %>
+<%@ Register Src="~/Controls/copyright.ascx" TagName="copyright" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+   <title>管理中心</title>
+<meta http-equiv=Content-Type content=text/html;charset=gb2312>
+    <link href="/style.css" type="text/css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body leftmargin="0" topmargin="0">
+    <form id="form1" runat="server">
+    <div>
+    
+        <table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+            <tr>
+                <td colspan="2" height="65" width="100%">
+                    <iframe id="Iframe1" frameborder="0" height="65px" width="100%"  scrolling="no" src="../admin_top.html"></iframe>
+                    
+                    </td>
+            </tr>
+            <tr>
+                <td width="186px"  height="550px" >
+                                       <iframe id="Iframe2" frameborder="0" height="100%" width ="100%"   scrolling="no" src="../left.html"></iframe>
+
+</td>
+                <td width="85%" valign="top">
+                                     <%--   <iframe id="Iframe3" frameborder="0" height="100%" width ="100%" runat="server" scrolling="no" src="right.html"></iframe>--%>
+ <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+</td>
+            </tr>
+        </table>
+    
+    </div>
+
+    
+    </form>
+</body>
+</html>
