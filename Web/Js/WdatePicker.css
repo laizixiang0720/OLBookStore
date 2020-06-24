@@ -1,0 +1,10 @@
+.Wdate{
+	border:#999 1px solid;
+	height:20px;
+	background:#fff url(../%E6%88%91%E7%9A%84学海云端_files/datePicker.gif) no-repeat right;
+}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

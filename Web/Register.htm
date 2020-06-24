@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)# -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>会员注册</title>
+<link href="Js/main2012.css" rel="stylesheet" type="text/css">
+</head>
+
+<body  >
+
+<table cellpadding="0" cellspacing="0" id="outerX" style="display: none; position: absolute;left: 0px; *margin-left: -1px; top: 0px; z-index: 100;">
+    <tbody><tr>
+        <td id="innerX">
+        </td>
+    </tr>
+</tbody></table>
+<div id="head">
+    <div class="head_top">
+        <div class="w1002 mCenter">
+            <div id="logon" class="wlecome"><span class="black">欢迎光临<a href="#">学海云端网上书店</a>　</span>  ［<a rel="nofollow" href="#">登录</a>］  ［<a href="#">注册</a> ］</div>
+            <div class="fLeft my_help_box">
+                <ul class="head_list">
+                    <li>
+                        <div class="help_c">
+                            <a class="head_link" href="" id="help" v="[0,0]">帮助中心</a></div>
+                        
+                    </li>
+                </ul>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <div class="w1002 mCenter pButtom15">
+        <div class="cp_logo">
+            <a href="#"></a>
+        </div>
+    </div>
+</div>
+<style type="text/css">#xtip {background-color:#FFFF99;position:absolute;font-size:18px;border: 1px solid #000000;padding: 3px;z-index: 500;}</style><span id="xtip" style="top: 414px;left: 761.5px;display:none;"></span>
+
+<div id="main">
+	<div class="sign">
+    	<h3 class="sign_title">
+        	<span class="sign_d">已注册用户，请  <a href="#/edition06/dl2012.asp">登录</a></span>
+            <span>用户注册</span>
+        </h3>
+		
+        <div class="login_box">
+		<form method="post" action="#" name="regform" id="regform">
+        	<div id="con_a_1" style="display: block;">
+            	<div class="item">
+                	<span class="float1"><span>*</span>用户名：</span>
+                    <div class="item_inp"><input style="width:200px;" class="normal" onfocus="chcls(this);" type="text" name="uid2" id="uid2" maxlength="40"> <input name="olduid2" id="olduid2" type="hidden">  </div>
+                    <div class="item_r"><span id="uid2_m" class="red12"><span class="gray12">由大小写英文字母、数字和下划线组成，长度4-20位。</span></span></div>
+                </div>
+                <div class="item">
+                	<span class="float1"><span>*</span>密&nbsp;&nbsp;码：</span>
+          
+					<div class="item_inp"><input style="width:200px;" class="normal" onfocus="chcls(this);" type="password" name="pwd2" onblur="mm2();chcls(this);" id="pwd2" maxlength="40">
+                    </div>
+                    <div class="item_r"><span id="pwd2_m" class="red12"><span class="gray12">建议8位以上的数字字母和下划线组成</span></span></div>
+                </div>
+                <div class="item">
+                	<span class="float1"><span>*</span>确认密码：</span>
+                    <div class="item_inp"><input style="width:200px;" class="normal" onfocus="chcls(this);" type="password" name="pwd22" onblur="mm22();chcls(this);" id="pwd22" maxlength="40">
+                    </div>
+                    <div class="item_r"><span id="pwd22_m" class="red12">请再次输入密码</span></div>
+                </div>
+                <div class="item">
+                	<span class="float1"><span>*</span>邮&nbsp;&nbsp;箱：</span>
+                    <div class="item_inp"><input style="width:200px;" class="normal" onfocus="chcls(this);" type="text" name="email" value="" id="email" onblur="if(cemail())chkemail();chcls(this);" maxlength="50"><input name="oldemail" id="oldemail" type="hidden"><!--接受来自搜狐的邮箱--><input name="outemail" id="outemail" type="hidden"><input name="gwc" id="gwc" type="hidden" value=""></div>
+                    <div class="item_r"><span class="gray12"><span id="email_m" class="red12">我们会将注册信息发送到该地址，同时Email也是“找回密码”的唯一途径</span></span></div>
+                </div>
+                <div class="item">
+                	<span class="float1"><span>*</span>验证码：</span>
+                    <div class="item_inp"><input style="width:100px;" class="normal" type="text" name="yzm" id="yzm" onfocus="chcls(this);" onblur="yzm22();chcls(this);" maxlength="4"></div>
+                    <div class="item_r">
+                    	<label><span class="gray12"><img src="Js/validatecode.asp" align="absmiddle" border="0">&nbsp;&nbsp;<span id="yzm_m" class="red12">请在输入框中键入图片中的数字</span></span>
+                        </label> 
+                    </div>
+                </div>
+                <div class="item">
+                	<span class="float1"><span>*</span>从哪里知道学海云端：</span>
+                    <div class="item_inp">
+                    	<select name="hysrc" id="hysrc">
+							<option value="">请选择</option>
+							<option value="搜索引擎">搜索引擎</option>
+							<option value="社区/微博">社区/微博</option>
+							<option value="线下展会">线下展会</option>
+							<option value="朋友推荐">朋友推荐</option>
+							<option value="其他">其他</option>
+						</select>
+                    </div>
+                </div>
+                <div class="item">
+                	<span class="float1"></span>
+                    <div class="item_inp"> 
+                    	<input name="tkuan" type="checkbox" class="check" id="tkuan" style="vertical-align:middle;" checked="CHECKED">
+                        <span style="vertical-align:middle">我已阅读并同意<a target="_blank" href="#/temporary/faq/2007FAQ/xieyi.asp">《互动出版网用户注册协议》</a></span></div>
+                </div>
+                <div class="item">
+                	<span class="float1"></span>
+                    <div class="item_inp">
+                     
+						 <input class="button" type="image" src="image/login_up.jpg" name="Submit2" onclick="return form_onsubmit()">
+                    </div>
+                </div>
+            </div>
+			</form>
+            
+            
+        </div>
+        <div class="clear"></div>
+    </div>
+	
+</div>
+
+<div id="bottom">
+	<div class="w1002 mCenter bottom_c">
+        <div class="cp_copyright">
+        	<p><a target="_blank" href="#">首页</a> | 
+			<a target="_blank" rel="nofollow" href="#">关于我们</a> | <a target="_blank" rel="nofollow" href="#">诚聘英才</a>
+			<a target="_blank" href="#"> 
+<img class="vCenter" src="image/weibo_xl.png"></a>  | 
+<a target="_blank" href="#" rel="nofollow">联系我们</a> | <a target="_blank" href="#" rel="nofollow">网站联盟</a> | 
+
+<a href="http://tongji.baidu.com/hm-web/welcome/ico?s=c68f8a95996223c018465c5143d0bdea" target="_blank"><img border="0" src="image/21.gif" width="20" height="20"></a>
+			
+			</p>
+            <p>Copyright 2000-2013 学海云端网上书店,All Rights Reserved</p>
+            <div class="clear"></div>
+            <div class="fLeft"><a href="#/view.asp?bianhao=010202001072000126" target="_blank"><img class="beian" src="image/beian.jpg"></a></div>
+            <div class="fLeft mLeft10 mTop5">
+            	<p><a target="_blank" href="">京ICP备06020074号-1 | 北京市公安局西城分局备案编号：110102000441</a></p>
+                <p><a target="_blank" href="">中华人民共和国出版物经营许可证：新出发京批字第直0496号</a></p>
+        	</div>
+            <div class="clear"></div>
+    	</div>
+    </div>
+</div>
+
+
+</body></html>
