@@ -1,91 +1,94 @@
 ﻿<%@ Page Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" CodeBehind="Modify.aspx.cs" Inherits="OLBookstore.Web.Books.Modify" Title="修改页" %>
+
+<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width: 100%;" cellpadding="2" cellspacing="1" class="border">
         <tr>
             <td class="tdbg">
-                
-<table cellSpacing="0" cellPadding="0" width="100%" border="0">
-	<tr>
-	<td height="25" width="30%" align="right">
-		Id
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:label id="lblId" runat="server"></asp:label>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		Title
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtTitle" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		Author
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtAuthor" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		PublisherId
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtPublisherId" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		PublishDate
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox ID="txtPublishDate" runat="server" Width="70px"  onfocus="setday(this)"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		ISBN
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:label id="lblISBN" runat="server"></asp:label>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		UnitPrice
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtUnitPrice" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		ContentDescription
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtContentDescription" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		TOC
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtTOC" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		CategoryId
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtCategoryId" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-	<tr>
-	<td height="25" width="30%" align="right">
-		Clicks
-	：</td>
-	<td height="25" width="*" align="left">
-		<asp:TextBox id="txtClicks" runat="server" Width="200px"></asp:TextBox>
-	</td></tr>
-</table>
-<script src="/js/calendar1.js" type="text/javascript"></script>
+
+                <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                    <tr>
+                        <td height="25" width="30%" align="right">Id：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:Label ID="lblId" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">标题：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:TextBox ID="txtTitle" runat="server" Width="200px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">作者：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:TextBox ID="txtAuthor" runat="server" Width="200px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">出版社：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:DropDownList ID="ddlPublisher" runat="server" DataTextField="Name" DataValueField="Id">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">出版日期：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:TextBox ID="txtPublishDate" runat="server" Width="129px" onfocus="setday(this)" TextMode="DateTime"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">ISBN：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:Label ID="lblISBN" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">封面：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:Image ID="imgBook" runat="server" Width="100px" />
+                            <asp:FileUpload ID="fuBook" runat="server" />
+                            <asp:Button ID="Button1" runat="server" Text="上传" OnClick="Button1_Click" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td height="25" width="30%" align="right">单价：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:TextBox ID="txtUnitPrice" runat="server" Width="200px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">内容描述：</td>
+                        <td height="25" width="*" align="left">
+                            <FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server">
+                            </FCKeditorV2:FCKeditor>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">目录：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:TextBox ID="txtTOC" runat="server" Width="749px" Height="83px" TextMode="MultiLine"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">类别：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:DropDownList ID="ddlCategory" runat="server" DataTextField="Name" DataValueField="Id">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="25" width="30%" align="right">点击次数：</td>
+                        <td height="25" width="*" align="left">
+                            <asp:TextBox ID="txtClicks" runat="server" Width="200px"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+                <script src="/js/calendar1.js" type="text/javascript"></script>
 
             </td>
         </tr>
