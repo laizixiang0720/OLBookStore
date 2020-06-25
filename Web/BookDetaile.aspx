@@ -1,30 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BookList.aspx.cs" Inherits="OLBookstore.Web.BookList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BookDetaile.aspx.cs" Inherits="OLBookstore.Web.BookDetaile" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 600px;
-        }
-    </style>
-    <link type="text/css" rel="stylesheet" href="Js/product.css" />
-    <link href="Js/main2012.css" rel="stylesheet" type="text/css" />
-    <style type="text/css">
-        #box {
-            position: absolute;
-            font-size: 18px;
-            padding: 3px;
-            z-index: 500;
-        }
-
-        .red13 {
-            background: none repeat scroll 0 0 #FFFF99;
-        }
-    </style>
+    <link href="Js/main2012.css" rel="stylesheet" type="text/css"/>
+<link href="Js/product.css" rel="stylesheet" type="text/css"/>
+     <style type="text/css">
+         .red14 h1 {
+             font-size: 14px;
+             line-height: 20px;
+             display: inline;
+         }
+     </style>
 </head>
 <body>
     <div id="head">
@@ -74,17 +64,6 @@
                     <!--<div class="head_buy fLeft" style="z-index: 105;">
                 <a href="javascript:void(0)" onClick="gotoCart();">
                     <span class="cartAmount">去结算 ></span></a></div>-->
-                    <div id="gwc_data" style="display: none">
-                        <div id="shop_cart_pos" class="shop_cart_pos" style="margin: auto auto auto 0px">
-                            <div class="shop_cart_bor">
-                            </div>
-                            <div id="cartbookarr">
-                                <p>您的购物车车内尚未添加任何商品，<a href="#">现在就去抢购吧！</a></p>
-                            </div>
-                            <div class="clear">
-                            </div>
-                        </div>
-                    </div>
                     <div class="head_buy fLeft" style="display: none">
                         <a target="_blank" href=""><span class="cartAmount">去结算 &gt;</span></a>
                     </div>
@@ -137,52 +116,105 @@
                 </div>
             </div>
         </div>
+
     <form id="form1" runat="server">
         <div id="right">
-            单击按钮进行排序：
-            <asp:Button ID="btnDefault" runat="server" Text="按书籍默认排序" OnClick="btnDefault_Click" />
-            <asp:Button ID="btnCate" runat="server" Text="按书籍类别排序" OnClick="btnCate_Click" />
-            <asp:Button ID="btnPrice" runat="server" Text="按书籍价格排序" OnClick="btnPrice_Click" />
-            <asp:DataList ID="DataList1" runat="server">
-                <ItemTemplate>
-                    <table class="auto-style1">
-                        <tr>
-                            <td rowspan="7">
-                               <a href='BookDetaile.aspx?Id=<%# Eval("Id") %>' target="_self"> <asp:Image ID="imgBook" runat="server" ImageUrl='<%# GetImg( Eval("ISBN").ToString()) %>' Width="170px" /></a>
-                            </td>
-                            <td style="width: 430px">书名：<%# Eval("Title") %></td>
-                        </tr>
-                        <tr>
-                            <td>作者：<%# Eval("Author") %></td>
-                        </tr>
-                        <tr>
-                            <td>出版社：<%# GetPublisherNameById( Eval("PublisherId").ToString()) %></td>
-                        </tr>
-                        <tr>
-                            <td>出版时间：<%# Eval("PublishDate") %></td>
-                        </tr>
-                        <tr>
-                            <td>书籍类型：<%# GetCategoryNameById( Eval("CategoryId").ToString() )%></td>
-                        </tr>
-                        <tr>
-                            <td>书籍价格：<%# Eval("UnitPrice") %></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl=' <%# "BookDetaile.aspx?bid="+Eval( "Id") %>'>详情</asp:HyperLink>
-                            </td>
-                        </tr>
-                    </table>
-                </ItemTemplate>
-                <SeparatorTemplate>
-                    <hr />
-                </SeparatorTemplate>
-            </asp:DataList>
-            <asp:Label ID="lblPageInfo" runat="server" Text=""></asp:Label>
-            <asp:Button ID="btnPre" runat="server" Text="上一页" OnClick="btnPre_Click" />
-            <asp:Button ID="btnNext" runat="server" Text="下一页" OnClick="btnNext_Click" />
+            <div class="pro_book">
+
+                <div class="pro_book">
+                    <h1>
+                        <%=Book.Title %>
+                        <img src="image/sf_by.png" border="0" />
+                    </h1>
+                    <div class="pro_book_img">
+                        <dl>
+                            <dt class="book_s">
+
+                                <a href="" class="gray12a">
+                                    <img src='<%= "userfiles/"+Book.ISBN+".jpg" %>'  border="0"  alt='<%= Book.Title %>' />
+                                </a>
+     
+                            </dt>
+                            <dd>
+
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+
+
+                <div class="pro_buy_intr">
+                    <ul>
+
+                        <li>定价：<span class="pro_buy_pri">￥<%= Book.UnitPrice %></span></li>
+                        <li id="xxjg">会员价：<span class="pro_buy_sen">￥<%= Convert.ToDouble(Book.UnitPrice) * 0.75%> (75折)</span></li>
+
+                        <li>校园优惠价：<span class="pro_buy_sen">￥<%= Convert.ToDouble(Book.UnitPrice) * 0.77%> (77折)</span>   <a href="#/STATIC07/0702/zh_songdali1_070209.asp" title="校园优惠价" target="_blank">(马上了解)</a> </li>
+
+
+
+                        <li class="pro_buy_star">评分：<a href="#/member/bookpinglun/viewpinglun.asp?id=4898555" target="_blank"><img src="image/star_0.gif" /><img src="image/star_0.gif" /><img src="image/star_0.gif" /><img src="image/star_0.gif" /><img src="image/star_0.gif" /> （已有0条评价）</a></li>
+                        <li class="pro_buy_bg">
+                            <div style="float:right"><a href="#" target="_blank" rel="nofollow"><img src="image/sf_zxzx.gif" width="80" border="0" height="20" /></a></div>
+                            <span class="fLeft">我要买：</span><a class="lower_book_q" onclick="value_up(&#39;0&#39;)"></a><input type="text" value="1" id="booknum" name="booknum" /><a class="add_book_q" onclick="value_up(&#39;1&#39;)"></a><div class="clear"></div>
+                            <div class="clear"></div>
+                        </li>
+
+                    </ul>
+            </div>
+            <div class="right_pro_intr">
+                <div class="pro_r_t" id="pro_title" style="">
+
+                    <a id="a1" onclick="setTab(&#39;a&#39;,1,3)" class="pro_r_t_hover">商品详情</a>
+                    <div style="float:right;width:104px;height:24px; ">
+                        <asp:ImageButton ID="imgbtnCart" runat="server" ImageUrl="image/sf_gwc.jpg" OnClick="imgbtnCart_Click" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="con_a_1" name="con_a_1" style="display:">
+                    <div class="pro_r_deta">
+                        <h3>基本信息</h3>
+                        <ul>
+
+                            <li>
+                                作者：
+                                <a href="#" target="_blank"><strong><%=Book.Author %></strong> </a>&nbsp;&nbsp;
+
+                            </li>
+                            <li>出版社：<a href="#/love/chubanshe/chubanshe.asp?newid=141" target="_blank"><%= GetPublisherNameById(Book.PublisherId) %></a> </li>
+                            <li>ISBN：<strong><%=Book.ISBN %></strong></li>  
+                            <li>出版日期：<%=Book.PublishDate.ToString("Y") %></li>
+                            <li>
+                                <div style="display:block; float:left">所属分类：</div><span style="display:block; float:left">
+                                   
+                                    <a class="blue13" href="#/1_1_59_0.html"> <%=GetCategoryNameById(Book.CategoryId) %> </a>
+                                </span>
+                                <div style="clear:both"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pro_r_deta">
+                        <h3 id="nrjj">内容简介</h3><!--更改-->
+                        <div>
+                            <%=Book.ContentDescription %>
+                        </div>
+
+                    </div>
+                    <div class="pro_r_deta">
+                        <h3 id="ml">目录</h3>
+                        <div>
+                            <%= Book.TOC%>
+                            </div>
+                        <div class="clear5px"> </div>
+
+                    </div>
+                </div>
+                </div>
+
         </div>
-    <div id="left">
+            </div>
+        <div id="left">
     	<div class="left_t">
         	<h3>图书分类</h3>
             <dl class="search_sort">
@@ -232,12 +264,7 @@
             </dl>
           
         </div>
-       
-     <div id="llls"><div></div></div>
- 
- 
     </div>
-
     </form>
 </body>
 </html>

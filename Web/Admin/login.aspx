@@ -18,7 +18,7 @@
             登录密码：<asp:TextBox ID="txtLoginPwd" runat="server" TextMode="Password"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="lblMess" runat="server" ForeColor="Red" Text="Label"></asp:Label>
+            <asp:Label ID="lblMess" runat="server" ForeColor="Red" Text=""></asp:Label>
             <br />
             <br />
             <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="登录" />

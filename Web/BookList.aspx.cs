@@ -11,8 +11,7 @@ namespace OLBookstore.Web
 {
     public partial class BookList : System.Web.UI.Page
     {
-        private int pageSize = 2;
-
+        private int pageSize = 3;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -122,6 +121,6 @@ namespace OLBookstore.Web
             BindBookInfo(sortSQL);
         }
 
-        
+ 
     }
 }

@@ -140,10 +140,15 @@ namespace OLBookstore.BLL
 			return modelList;
 		}
 
-		/// <summary>
-		/// 获得数据列表
-		/// </summary>
-		public DataSet GetAllList()
+        public void Delete(int bookid, int userid)
+        {
+			dal.Delete(bookid, userid);
+        }
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public DataSet GetAllList()
 		{
 			return GetList("");
 		}

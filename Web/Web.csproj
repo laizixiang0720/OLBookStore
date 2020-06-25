@@ -255,12 +255,14 @@
     <Content Include="Admin\Categories\Modify.aspx" />
     <Content Include="Admin\Categories\Show.aspx" />
     <Content Include="bin\OLBookstore.BLL.dll" />
+    <Content Include="BookDetaile.aspx" />
     <Content Include="BookDetaile.htm" />
     <Content Include="BookList.aspx" />
     <Content Include="BookList.htm" />
     <Content Include="BookList1.htm" />
     <Content Include="BookList2.htm" />
     <Content Include="BookSearch.aspx" />
+    <Content Include="Cart.aspx" />
     <Content Include="Cart.htm" />
     <Content Include="Comment.htm" />
     <Content Include="Controls\checkright.ascx" />
@@ -1277,6 +1279,7 @@
     <Content Include="Js\WdatePicker.css" />
     <Content Include="Js\WdatePicker.js" />
     <Content Include="Js\_foot.js" />
+    <Content Include="login.aspx" />
     <Content Include="Login.htm" />
     <Content Include="Register.htm" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
@@ -1763,6 +1766,13 @@
     <Compile Include="Admin\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookDetaile.aspx.cs">
+      <DependentUpon>BookDetaile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookDetaile.aspx.designer.cs">
+      <DependentUpon>BookDetaile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BookList.aspx.cs">
       <DependentUpon>BookList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1776,6 +1786,13 @@
     </Compile>
     <Compile Include="BookSearch.aspx.designer.cs">
       <DependentUpon>BookSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controls\CheckRight.ascx.cs">
       <DependentUpon>checkright.ascx</DependentUpon>
@@ -1884,6 +1901,13 @@
     </Compile>
     <Compile Include="HotBook.aspx.designer.cs">
       <DependentUpon>HotBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin\Publishers\Add.aspx.cs">

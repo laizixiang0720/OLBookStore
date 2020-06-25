@@ -121,6 +121,9 @@
 .cart_box .flow_buy_goon{background:url(../image/shop_go_on.gif) no-repeat; margin-right:10px;}
 .cart_box .flow_clear{/*background:url(../image/go_shop_cart.gif) no-repeat;*/background: #fc7215;border-radius: 8px; margin-right:5px; text-align:center; font-size:15px; line-height:30px; color:#FFF; font-family:"Î¢ÈíÑÅºÚ"; line-height:30px;}
 #flow_clear{ color:#FFF;}
+.flow_clear input{
+    cursor:pointer;
+}
 .cart_box .del_long_ago{border:1px solid #ddd; background:#f3f3f3; padding:10px 20px 20px; margin-top:10px; color:#333; line-height:25px;}
 .cart_box .del_long_ago p{ margin-bottom:10px;}
 .cart_box .del_long_ago li{height:30px; display:block; clear:both;}

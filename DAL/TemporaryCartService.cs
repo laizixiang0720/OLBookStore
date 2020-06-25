@@ -309,7 +309,29 @@ namespace OLBookstore.DAL
 
 		#endregion  BasicMethod
 		#region  ExtensionMethod
+		public bool Delete(int bookid,int userid)
+		{
 
+			StringBuilder strSql = new StringBuilder();
+			strSql.Append("delete from TemporaryCart ");
+			strSql.Append(" where BookId=@BookId and UserId=@UserId");
+			SqlParameter[] parameters = {
+					new SqlParameter("@BookId", SqlDbType.Int,4),
+					new SqlParameter("@UserId",SqlDbType.Int,4)
+			};
+			parameters[0].Value = bookid;
+			parameters[1].Value = userid;
+
+			int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+			if (rows > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 		#endregion  ExtensionMethod
 	}
 }
