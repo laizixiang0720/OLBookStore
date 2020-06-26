@@ -1211,6 +1211,7 @@
     <Content Include="image\zmbug485150.jpg" />
     <Content Include="image\zx_online.gif" />
     <Content Include="image\zzssyq485150.jpg" />
+    <Content Include="Indent.aspx" />
     <Content Include="Indent.htm" />
     <Content Include="Index.htm" />
     <Content Include="Js\banner.aspx" />
@@ -1901,6 +1902,13 @@
     </Compile>
     <Compile Include="HotBook.aspx.designer.cs">
       <DependentUpon>HotBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Indent.aspx.cs">
+      <DependentUpon>Indent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Indent.aspx.designer.cs">
+      <DependentUpon>Indent.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
